@@ -9,6 +9,7 @@ tasks = [
     ["Задание #5: Выполните быстрое сканирование с помощью шаблона T5 сайт rsvpu.ru", "nmap -T5 rsvpu.ru"]
 ]
 
+
 def getTask():
     userPrompt = input("$root: " + tasks[k][0] + "\n")
     if userPrompt == tasks[k][1]:
@@ -20,11 +21,12 @@ def getTask():
         print("Ответ неверный!")
         return False
 
+
 if __name__ == "__main__":
     print("Тренажер: 'Сетевой сканер Nmap'\n")
     while k < len(tasks):
         task = getTask()
-        k += 1
-        if (task == False):
-            break
+        if task:
+            k += 1
     print("Спасибо за прохождения теста по командам Nmap. Итоговая оценка:", Mark, "балл(а)")
+    input()
